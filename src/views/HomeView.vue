@@ -4,7 +4,12 @@
       <h1>Scroll Smooth Testing</h1>
       <p>Ok nice</p>
     </section>
-    <section class="section2" id="my-section" data-scroll-section>
+    <section
+      class="section2"
+      id="my-section"
+      data-scroll-section
+      data-scroll-speed="5"
+    >
       <h1>TESTING</h1>
       <p>Ok nice</p>
       <!--      <h2 data-scroll data-scroll-speed="1">What's up?</h2>
@@ -15,12 +20,19 @@
 
 <script>
 import LocomotiveScroll from "locomotive-scroll";
+
 export default {
   name: "HomeView",
   mounted() {
-    new LocomotiveScroll({
+    this.scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
+      lerp: 0.01,
+    });
+
+    this.scroll.on("scroll", (obj) => {
+      // Your scrolling code goes here
+      console.log(obj);
     });
   },
 };
