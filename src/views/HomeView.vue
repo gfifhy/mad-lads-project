@@ -1,8 +1,8 @@
 <template>
-  <div style="background: orange; z-index: 100">
-    <NavMenu />
-  </div>
   <div data-scroll-container>
+    <section data-scroll-section>
+      <NavMenu />
+    </section>
     <section data-scroll-section>
       <h1>Scroll Smooth Testing</h1>
       <p>Ok nice</p>

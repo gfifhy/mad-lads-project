@@ -1,13 +1,13 @@
 <template>
-  <PreLoader />
+  <NavMenu />
 </template>
 
 <script>
-import PreLoader from "@/components/PreLoader.vue";
+import NavMenu from "@/components/NavMenu.vue";
 
 export default {
   name: "PreloaderView",
-  components: { PreLoader },
+  components: { NavMenu },
 };
 </script>
 

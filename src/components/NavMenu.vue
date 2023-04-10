@@ -132,6 +132,7 @@ body {
 }
 
 .nav-container {
+  top: 0;
   position: fixed;
   left: -100%;
   width: 100%;
