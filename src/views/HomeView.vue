@@ -1,4 +1,7 @@
 <template>
+  <div style="background: orange; z-index: 100">
+    <NavMenu />
+  </div>
   <div data-scroll-container>
     <section data-scroll-section>
       <h1>Scroll Smooth Testing</h1>
@@ -20,9 +23,11 @@
 
 <script>
 import LocomotiveScroll from "locomotive-scroll";
+import NavMenu from "@/components/NavMenu.vue";
 
 export default {
   name: "HomeView",
+  components: { NavMenu },
   mounted() {
     this.scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
