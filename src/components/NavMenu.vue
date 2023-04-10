@@ -105,6 +105,7 @@ body {
 
 .menu-open {
   color: #0d0d0d;
+  cursor: pointer;
 }
 
 .menu-open,
