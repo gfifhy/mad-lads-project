@@ -1,29 +1,27 @@
 <template>
   <!--  Design -->
-  <Transition name="fade">
-    <div class="parent" v-if="show">
-      <div class="child">
-        <div class="shape-group">
-          <div class="shape-el shape-1"><div></div></div>
-          <div class="shape-el shape-2">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <div class="shape-el shape-3">
-            <div><div></div></div>
-          </div>
-          <div class="shape-el shape-4">
-            <div></div>
-            <div></div>
-          </div>
-          <div class="shape-el shape-5"><div></div></div>
-          <div class="shape-el shape-6"><div></div></div>
-          <div class="shape-el shape-7"><div></div></div>
+  <div class="parent">
+    <div class="child">
+      <div class="shape-group">
+        <div class="shape-el shape-1"><div></div></div>
+        <div class="shape-el shape-2">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
+        <div class="shape-el shape-3">
+          <div><div></div></div>
+        </div>
+        <div class="shape-el shape-4">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="shape-el shape-5"><div></div></div>
+        <div class="shape-el shape-6"><div></div></div>
+        <div class="shape-el shape-7"><div></div></div>
       </div>
     </div>
-  </Transition>
+  </div>
 </template>
 
 <script>
@@ -31,9 +29,7 @@ import gsap from "gsap";
 export default {
   name: "PreLoader",
   data() {
-    return {
-      show: true,
-    };
+    return {};
   },
   methods: {
     bringToTop(shapes) {
@@ -61,11 +57,6 @@ export default {
       );
       this.animation.play();
     },
-    showDelay() {
-      setTimeout(() => {
-        this.show = false;
-      }, 800);
-    },
   },
   mounted() {
     this.ctx = gsap.context(() => {
@@ -77,7 +68,6 @@ export default {
       });
       this.bringToTop(shapes);
       this.animateShapes(shapes);
-      this.showDelay();
     });
   },
   unMounted() {
@@ -110,12 +100,12 @@ $white: #f2f2f2;
   }
 }
 .parent {
+  background: $black;
   height: 100svh;
   width: 100svw;
   top: 0;
   left: 0;
   position: fixed;
-  z-index: 10000;
   .child {
     display: flex;
     justify-content: center;

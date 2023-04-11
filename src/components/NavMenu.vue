@@ -72,7 +72,7 @@ export default {
     this.tl.to(this.$refs.navContainer, {
       duration: 1,
       left: 0,
-      ease: "power1.out",
+      ease: "power1.inOut",
     });
     this.tl.staggerFrom(
       ".menu > div",
