@@ -1,8 +1,13 @@
 <template>
-  <div data-scroll-container>
-    <section data-scroll-section>
+  <div data-scroll-container id="main">
+    <div
+      data-scroll-container
+      data-scroll-sticky
+      data-scroll-target="#main"
+      class="nav-menu"
+    >
       <NavMenu />
-    </section>
+    </div>
     <section data-scroll-section>
       <h1>Scroll Smooth Testing</h1>
       <p>Ok nice</p>
@@ -52,6 +57,9 @@ export default {
 
 section {
   height: 100vh;
-  padding: 10em;
+}
+.nav-menu {
+  z-index: 100;
+  position: sticky;
 }
 </style>

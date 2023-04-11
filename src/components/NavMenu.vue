@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="menu-open" @click="toggleMenu()">menu</div>
+    <div class="navbar-toggler-open" @click="toggleMenu()">menu</div>
     <div class="nav-container" ref="navContainer">
-      <div class="menu-close" @click="toggleMenu()">close</div>
+      <div class="navbar-toggler-close" @click="toggleMenu()">close</div>
       <div class="socials">
         <span>facebook</span>
         <span>instagram</span>
@@ -91,25 +91,26 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+$red: #e33e3f;
+$black: #0d0d0d;
+$white: #f2f2f2;
 * {
   font-family: "Josefin Sans";
   font-weight: 400;
-  color: #0d0d0d;
 }
 
-body {
-  margin: 0;
-  background: #161616;
+.menu {
+  background: $red;
 }
 
-.menu-open {
+.navbar-toggler-open {
   color: #0d0d0d;
   cursor: pointer;
 }
 
-.menu-open,
-.menu-close {
+.navbar-toggler-open,
+.navbar-toggler-close {
   position: absolute;
   top: 0;
   right: 0;

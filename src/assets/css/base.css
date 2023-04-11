@@ -68,4 +68,5 @@ html.has-scroll-dragging {
     cursor: grabbing; }
 [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
     right: auto;
-    bottom: 0; }
+    bottom: 0;
+}
