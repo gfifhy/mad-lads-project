@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div class="navbar-toggler-open" @click="toggleMenu()">menu</div>
+    <div class="navbar-toggler" @click="toggleMenu()">
+      <img src="../assets/images/bluball.png" alt="" ref="menuIcon" />
+    </div>
     <div class="nav-container" ref="navContainer">
-      <div class="navbar-toggler-close" @click="toggleMenu()">close</div>
       <nav class="menu">
         <div class="menu__item">
           <a class="menu__item-link">Home</a>
@@ -53,14 +54,26 @@ import { gsap } from "gsap";
 export default {
   name: "NavMenu",
   mounted() {
-    this.tl = gsap.timeline({ paused: true });
+    /*this.rotateBlueball = gsap.timeline({ paused: true });
+    this.rotateBlueball.to(this.$refs.menuIcon, {
+      rotation: -390,
+      duration: 5,
+      ease: "expo.out",
+    });
+    this.rotateBlueball.reverse();*/
 
+    var rotateBall = gsap.timeline({ repeat: -1 });
+    rotateBall.to(this.$refs.menuIcon, {
+      rotation: -360,
+      duration: 10,
+      ease: "none",
+    });
+    this.tl = gsap.timeline({ paused: true });
     this.tl.to(this.$refs.navContainer, {
       duration: 1,
       left: 0,
-      ease: "expo.out",
+      ease: "power1.out",
     });
-
     this.tl.staggerFrom(
       ".menu > div",
       0.8,
@@ -82,6 +95,7 @@ export default {
   methods: {
     toggleMenu() {
       this.tl.reversed(!this.tl.reversed());
+      //this.rotateBlueball.reversed(!this.rotateBlueball.reversed());
     },
   },
 };
@@ -102,19 +116,18 @@ export default {
   justify-content: space-evenly;
 }
 
-.navbar-toggler-open {
+.navbar-toggler {
   color: #0d0d0d;
+  z-index: 2;
+  position: fixed;
   cursor: pointer;
-}
-
-.navbar-toggler-open,
-.navbar-toggler-close {
-  position: absolute;
   top: 0;
   right: 0;
-  padding: 40px;
+  transform: translate(35%, -35%);
   font-size: 20px;
-  cursor: pointer;
+  img {
+    width: 150px;
+  }
 }
 
 .nav-container {
@@ -204,5 +217,9 @@ export default {
 
 .marquee span {
   font-style: italic;
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 </style>
