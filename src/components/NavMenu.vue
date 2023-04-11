@@ -3,10 +3,6 @@
     <div class="navbar-toggler-open" @click="toggleMenu()">menu</div>
     <div class="nav-container" ref="navContainer">
       <div class="navbar-toggler-close" @click="toggleMenu()">close</div>
-      <div class="socials">
-        <span>facebook</span>
-        <span>instagram</span>
-      </div>
       <nav class="menu">
         <div class="menu__item">
           <a class="menu__item-link">Home</a>
@@ -92,9 +88,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$red: #e33e3f;
-$black: #0d0d0d;
-$white: #f2f2f2;
+@import "@/assets/scss/base.scss";
 * {
   font-family: "Josefin Sans";
   font-weight: 400;
@@ -102,6 +96,10 @@ $white: #f2f2f2;
 
 .menu {
   background: $red;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .navbar-toggler-open {
@@ -117,19 +115,6 @@ $white: #f2f2f2;
   padding: 40px;
   font-size: 20px;
   cursor: pointer;
-}
-
-.socials {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: 40px 100px;
-}
-
-.socials span {
-  text-transform: uppercase;
-  margin: 0 20px;
-  letter-spacing: 0px;
 }
 
 .nav-container {
@@ -183,14 +168,6 @@ $white: #f2f2f2;
   opacity: 1;
   transform: scale(1);
   transition: all 0.4s;
-}
-
-.menu {
-  padding: 10vh 0 25vh;
-  --offset: 20vw;
-  --move-initial: calc(-25% + var(--offset));
-  --move-final: calc(-50% + var(--offset));
-  font-size: 7vw;
 }
 
 .marquee {
