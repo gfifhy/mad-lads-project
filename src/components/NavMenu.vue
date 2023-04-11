@@ -188,7 +188,7 @@ export default {
   top: 0;
   left: 0;
   overflow: hidden;
-  color: rgb(214, 214, 214);
+  color: rgba(0, 0, 0, 0.4);
   pointer-events: none;
 }
 
@@ -220,6 +220,16 @@ export default {
 }
 
 @media only screen and (max-width: 768px) {
-
+  .menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    div,
+    a {
+      padding: 20px 0px 25px 15px;
+    }
+    div.marquee {
+      margin-left: -30px;
+    }
+  }
 }
 </style>
