@@ -1,4 +1,7 @@
 <template>
+  <div data-scroll-container>
+    <PreLoader />
+  </div>
   <div data-scroll-container id="main">
     <div
       data-scroll-container
@@ -29,10 +32,11 @@
 <script>
 import LocomotiveScroll from "locomotive-scroll";
 import NavMenu from "@/components/NavMenu.vue";
+import PreLoader from "@/components/PreLoader.vue";
 
 export default {
   name: "HomeView",
-  components: { NavMenu },
+  components: { PreLoader, NavMenu },
   mounted() {
     this.scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
