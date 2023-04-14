@@ -13,7 +13,13 @@
   >
     play
   </button>-->
-  <div><PreLoader message="You know what's cooking? BOOOOOM!" /></div>
+  <div
+    @click.prevent="
+      playSound('https://cdn.whyp.it/758f596e-cf3e-49ae-a2cd-032ab74bfda6.mp3')
+    "
+  >
+    <PreLoader message="You know what's cooking? BOOOOOM!" />
+  </div>
 </template>
 
 <script>
