@@ -1,8 +1,5 @@
 <template>
   <!--  Design -->
-  <audio controls autoplay loop>
-    <source src="../assets/youknowwhatscooking.mp3" type="audio/ogg" />
-  </audio>
   <div class="parent">
     <div class="child">
       <div class="shape-group">
