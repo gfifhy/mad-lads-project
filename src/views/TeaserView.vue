@@ -42,7 +42,6 @@ export default {
     playSound(sound) {
       if (sound) {
         const audio = new Audio(sound);
-        audio.loop = true;
         audio.play();
       }
     },
