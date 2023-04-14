@@ -1,5 +1,8 @@
 <template>
   <!--  Design -->
+  <audio controls autoplay loop>
+    <source src="../assets/youknowwhatscooking.mp3" type="audio/ogg" />
+  </audio>
   <div class="parent">
     <div class="child">
       <div class="shape-group">
@@ -20,6 +23,7 @@
         <div class="shape-el shape-6"><div></div></div>
         <div class="shape-el shape-7"><div></div></div>
       </div>
+      <div class="message">{{ message }}</div>
     </div>
   </div>
 </template>
@@ -28,6 +32,9 @@
 import gsap from "gsap";
 export default {
   name: "PreLoader",
+  props: {
+    message: String,
+  },
   data() {
     return {};
   },
@@ -199,5 +206,14 @@ $white: #f2f2f2;
       height: 33.5px;
     }
   }
+}
+
+.message {
+  color: $white;
+  font-family: "Josefin Sans", serif;
+  font-weight: 700;
+  font-size: 25px;
+  position: relative;
+  top: 28%;
 }
 </style>
