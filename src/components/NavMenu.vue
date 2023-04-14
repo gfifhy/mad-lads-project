@@ -231,5 +231,8 @@ export default {
       margin-left: -30px;
     }
   }
+  .navbar-toggler img {
+    width: 120px;
+  }
 }
 </style>

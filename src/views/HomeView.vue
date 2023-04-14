@@ -1,65 +1,106 @@
 <template>
-  <div data-scroll-container id="main">
-    <div
-      data-scroll-container
-      data-scroll-sticky
-      data-scroll-target="#main"
-      class="nav-menu"
-    >
+  <div data-scroll-container class="smooth-scroll" id="main" ref="main">
+    <div data-scroll-sticky data-scroll-target="#main" class="nav-menu">
       <NavMenu />
     </div>
-    <section data-scroll-section>
-      <h1>Scroll Smooth Testing</h1>
-      <p>Ok nice</p>
-    </section>
-    <section
-      class="section2"
-      id="my-section"
-      data-scroll-section
-      data-scroll-speed="5"
-    >
-      <h1>TESTING</h1>
-      <p>Ok nice</p>
-      <!--      <h2 data-scroll data-scroll-speed="1">What's up?</h2>
-            <p data-scroll data-scroll-speed="2">😬</p>-->
-    </section>
+    <div class="parent" ref="parent">
+      <div class="vh-100 section1"><IntroComponent /></div>
+      <div class="vh-100 section2">Blue</div>
+      <div class="vh-100 section3">Red</div>
+      <div class="vh-100 section4">Yellow</div>
+    </div>
   </div>
 </template>
 
 <script>
 import LocomotiveScroll from "locomotive-scroll";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavMenu from "@/components/NavMenu.vue";
+import IntroComponent from "@/components/IntroComponent.vue";
 
 export default {
   name: "HomeView",
-  components: { NavMenu },
+  components: { IntroComponent, NavMenu },
   mounted() {
-    this.scroll = new LocomotiveScroll({
-      el: document.querySelector("[data-scroll-container]"),
+    gsap.registerPlugin(ScrollTrigger);
+
+    const scroll = new LocomotiveScroll({
+      el: this.$refs.main,
       smooth: true,
       lerp: 0.01,
+      tablet: { smooth: true },
+      smartphone: { smooth: true },
     });
 
-    this.scroll.on("scroll", (obj) => {
-      // Your scrolling code goes here
-      console.log(obj);
+    scroll.on("scroll", ScrollTrigger.update);
+    ScrollTrigger.scrollerProxy(".smooth-scroll", {
+      scrollTop(value) {
+        return arguments.length
+          ? scroll.scrollTo(value, { duration: 0, disableLerp: true })
+          : scroll.scroll.instance.scroll.y;
+      },
+      // we don't have to define a scrollLeft because we're only scrolling vertically.
+      getBoundingClientRect() {
+        return {
+          top: 0,
+          left: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+        };
+      },
+      // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+      pinType: document.querySelector(".smooth-scroll").style.transform
+        ? "transform"
+        : "fixed",
     });
+    ScrollTrigger.addEventListener("refresh", () => scroll.update());
+    ScrollTrigger.defaults({ scroller: ".smooth-scroll" });
+    console.log(ScrollTrigger.defaults().scroller);
+
+    const container = this.$refs.parent;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".parent",
+        start: "top top",
+        scrub: true,
+        end: "bottom bottom",
+      },
+    });
+
+    tl.to(
+      container,
+      { duration: 1, backgroundColor: "#0000FF", ease: "none" },
+      0
+    )
+      .to(
+        container,
+        { duration: 1, backgroundColor: "#FF0000", ease: "none" },
+        1
+      )
+      .to(
+        container,
+        { duration: 1, backgroundColor: "#FFFF00", ease: "none" },
+        2
+      );
+    ScrollTrigger.refresh();
   },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import "@/assets/css/base.css";
+@import "@/assets/scss/base.scss";
 
 * {
   box-sizing: border-box;
 }
-
-section {
-  height: 100vh;
-}
 .nav-menu {
   z-index: 100;
   position: sticky;
+}
+.vh-100 {
+  height: 100svh;
+  width: 100svw;
 }
 </style>
