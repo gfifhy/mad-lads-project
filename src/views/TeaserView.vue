@@ -1,19 +1,5 @@
 <template>
-  <audio controls autoplay="true" loop muted="muted">
-    <source
-      src="https://mad-lads.epizy.com/youknowwhatscooking.mp3"
-      type="audio/ogg"
-    />
-  </audio>
-  <!--  <button
-    @click.prevent="
-      playSound('https://cdn.whyp.it/758f596e-cf3e-49ae-a2cd-032ab74bfda6.mp3')
-    "
-    style="color: white; position: relative; z-index: 99999"
-  >
-    play
-  </button>-->
-  <div>
+  <div @click.prevent="playAudio" style="cursor: pointer">
     <PreLoader message="You know what's cooking? BOOOOOM!" />
   </div>
 </template>
@@ -24,16 +10,15 @@ import PreLoader from "@/components/PreLoader.vue";
 export default {
   name: "TeaserView",
   components: { PreLoader },
-  mounted() {
-    const audio = new Audio(
-      "https://mad-lads.epizy.com/youknowwhatscooking.mp3"
-    );
-    audio.loop = true;
-    audio.addEventListener("canplaythrough", () => {
+  mounted() {},
+  methods: {
+    playAudio() {
+      const audio = new Audio(
+        "https://drive.google.com/uc?id=1QRI6JfKhessaeY_z5Sov5XVSojR6OzgA"
+      );
       audio.play();
-    });
+    },
   },
-  methods: {},
 };
 </script>
 
