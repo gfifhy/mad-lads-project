@@ -37,6 +37,9 @@ export default {
     const sound =
       "https://cdn.whyp.it/758f596e-cf3e-49ae-a2cd-032ab74bfda6.mp3";
     this.playSound(sound);
+    const audio = new Audio(sound);
+    audio.loop = true;
+    audio.play();
   },
   methods: {
     playSound(sound) {
