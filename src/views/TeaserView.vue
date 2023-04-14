@@ -1,7 +1,7 @@
 <template>
   <audio controls autoplay="true" loop muted="muted">
     <source
-      src="https://cdn.whyp.it/758f596e-cf3e-49ae-a2cd-032ab74bfda6.mp3"
+      src="https://mad-lads.epizy.com/youknowwhatscooking.mp3"
       type="audio/ogg"
     />
   </audio>
@@ -25,7 +25,9 @@ export default {
   name: "TeaserView",
   components: { PreLoader },
   mounted() {
-    const audio = new Audio("../assets/youknowwhatscooking.mp3");
+    const audio = new Audio(
+      "https://mad-lads.epizy.com/youknowwhatscooking.mp3"
+    );
     audio.loop = true;
     audio.addEventListener("canplaythrough", () => {
       audio.play();
