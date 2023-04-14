@@ -1,12 +1,16 @@
 <template>
-  <div
+  <audio controls autoplay loop>
+    <source src="../assets/youknowwhatscooking.mp3" type="audio/ogg" />
+  </audio>
+  <!--  <button
     @click.prevent="
       playSound('https://cdn.whyp.it/758f596e-cf3e-49ae-a2cd-032ab74bfda6.mp3')
     "
-    class="pointer"
+    style="color: white; position: relative; z-index: 99999"
   >
-    <PreLoader message="You know what's cooking? BOOOOOM!" />
-  </div>
+    play
+  </button>-->
+  <div><PreLoader message="You know what's cooking? BOOOOOM!" /></div>
 </template>
 
 <script>
@@ -20,16 +24,11 @@ export default {
     };
   },
   components: { PreLoader },
-  created() {
-    const sound =
-      "https://cdn.whyp.it/758f596e-cf3e-49ae-a2cd-032ab74bfda6.mp3";
-    this.playSound(sound);
-  },
   methods: {
     playSound(sound) {
       if (sound) {
         var audio = new Audio(sound);
-        //audio.loop = true;
+        audio.loop = true;
         audio.play();
       }
     },
@@ -40,8 +39,5 @@ export default {
 <style lang="scss" scoped>
 .title {
   color: #f2f2f2;
-}
-.pointer {
-  cursor: pointer;
 }
 </style>
