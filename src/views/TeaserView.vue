@@ -1,4 +1,10 @@
 <template>
+  <router-link
+    :to="{ name: 'progress' }"
+    style="position: relative; z-index: 99999999; color: white"
+  >
+    Progress
+  </router-link>
   <div @click.prevent="playAudio" style="cursor: pointer">
     <PreLoader message="You know what's cooking? BOOOOOM!" />
   </div>
