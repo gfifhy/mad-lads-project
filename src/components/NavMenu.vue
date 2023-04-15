@@ -14,13 +14,10 @@
           </div>
         </div>
         <div class="menu__item">
-          <a class="menu__item-link">Showcase</a>
+          <a class="menu__item-link">NFTs</a>
           <div class="marquee">
             <div class="marquee__inner">
-              <span
-                >Showcase - Showcase - Showcase - Showcase - Showcase - Showcase
-                - Showcase</span
-              >
+              <span>NFTs - NFTs - NFTs - NFTs - NFTs - NFTs - NFTs</span>
             </div>
           </div>
         </div>
@@ -33,13 +30,14 @@
           </div>
         </div>
         <div class="menu__item">
-          <a class="menu__item-link">Contact</a>
+          <a class="menu__item-link">Whitelist me plz :&lt;</a>
           <!--          <img class="menu__item-img" src="menu-img-four.jpg" />-->
           <div class="marquee">
             <div class="marquee__inner">
               <span
-                >Contact - Contact - Contact - Contact - Contact - Contact -
-                Contact</span
+                >Whitelist me plz :&lt; - Whitelist me plz :&lt; - Whitelist me
+                plz :&lt; - Whitelist me plz :&lt; - Whitelist me plz :&lt; -
+                Whitelist me plz :&lt; - Whitelist me plz :&lt;</span
               >
             </div>
           </div>
