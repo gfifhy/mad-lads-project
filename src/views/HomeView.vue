@@ -24,6 +24,9 @@ import IntroComponent from "@/components/IntroComponent.vue";
 export default {
   name: "HomeView",
   components: { IntroComponent, NavMenu },
+  created() {
+    document.title = "Mad Lads | NFT";
+  },
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -107,5 +110,10 @@ export default {
 }
 .parent {
   background-color: $black;
+}
+.section2 {
+  height: 100vh;
+  width: 100vw;
+  background: url("../assets/images/CoralBKG.png");
 }
 </style>

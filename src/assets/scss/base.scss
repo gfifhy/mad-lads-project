@@ -1,4 +1,5 @@
-$red: #e33e3f;
+$light-red: #e33e3f;
+$red: #f62038;
 $black: #0d0d0d;
 $white: #f2f2f2;
 $dirt: #f0e7db;
@@ -14,6 +15,17 @@ $font_path: '~@/assets/fonts/';
 @font-face {
   font-family: "Gotham-light";
   src: url($font_path + 'GothamLight.ttf');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Gotham-medium";
+  src: url($font_path + 'GothamMedium.ttf');
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Gotham-bold";
+  src: url($font_path + 'GothamBold.ttf');
   font-weight: 900;
 }
 @font-face {
@@ -36,3 +48,8 @@ $font_path: '~@/assets/fonts/';
   justify-content: center;
   width: 100%;
 }
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
