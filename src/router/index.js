@@ -9,6 +9,14 @@ const routes = [
       title: "Mad Lads",
     },
   },
+  {
+    path: "/in-progress",
+    name: "progress",
+    component: () => import("../views/HomeView.vue"),
+    meta: {
+      title: "Mad Lads",
+    },
+  },
 ];
 
 const router = createRouter({

@@ -4,7 +4,9 @@
       <NavMenu />
     </div>
     <div class="parent" ref="parent">
-      <div class="vh-100 section1"><IntroComponent /></div>
+      <div data-scroll-section data-scroll class="section1">
+        <IntroComponent />
+      </div>
       <div class="vh-100 section2">Blue</div>
       <div class="vh-100 section3">Red</div>
       <div class="vh-100 section4">Yellow</div>
@@ -28,6 +30,7 @@ export default {
     const scroll = new LocomotiveScroll({
       el: this.$refs.main,
       smooth: true,
+      multiplier: 0.8,
       lerp: 0.01,
       tablet: { smooth: true },
       smartphone: { smooth: true },
@@ -56,7 +59,6 @@ export default {
     });
     ScrollTrigger.addEventListener("refresh", () => scroll.update());
     ScrollTrigger.defaults({ scroller: ".smooth-scroll" });
-    console.log(ScrollTrigger.defaults().scroller);
 
     const container = this.$refs.parent;
     const tl = gsap.timeline({
@@ -70,17 +72,17 @@ export default {
 
     tl.to(
       container,
-      { duration: 1, backgroundColor: "#0000FF", ease: "none" },
+      { duration: 1, backgroundColor: "#F2F2F2", ease: "none" },
       0
     )
       .to(
         container,
-        { duration: 1, backgroundColor: "#FF0000", ease: "none" },
+        { duration: 1, backgroundColor: "#F2F2F2", ease: "none" },
         1
       )
       .to(
         container,
-        { duration: 1, backgroundColor: "#FFFF00", ease: "none" },
+        { duration: 1, backgroundColor: "#F2F2F2", ease: "none" },
         2
       );
     ScrollTrigger.refresh();
@@ -102,5 +104,8 @@ export default {
 .vh-100 {
   height: 100svh;
   width: 100svw;
+}
+.parent {
+  background-color: $black;
 }
 </style>

@@ -21,3 +21,18 @@ $font_path: '~@/assets/fonts/';
   src: url($font_path + 'GothamBlack.otf');
   font-weight: 900;
 }
+
+
+//duera
+@font-face {
+  font-family: "Duera";
+  src: url($font_path + 'Duera-CondBold-PERSONAL.ttf');
+  font-weight: 900;
+}
+
+
+.center-all {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
