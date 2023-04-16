@@ -7,9 +7,7 @@
       <div data-scroll-section data-scroll class="section1">
         <IntroComponent />
       </div>
-      <div class="vh-100 section2">Blue</div>
-      <div class="vh-100 section3">Red</div>
-      <div class="vh-100 section4">Yellow</div>
+      <div data-scroll-section data-scroll class="vh-100 section2">Blue</div>
     </div>
   </div>
 </template>
@@ -35,8 +33,7 @@ export default {
       smooth: true,
       multiplier: 0.8,
       lerp: 0.01,
-      tablet: { smooth: true },
-      smartphone: { smooth: true },
+      smartphone: { smooth: false, lerp: 1, multiplier: 1 },
     });
 
     scroll.on("scroll", ScrollTrigger.update);

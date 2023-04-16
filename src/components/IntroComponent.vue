@@ -1,5 +1,5 @@
 <template>
-  <div class="intro-container">
+  <div class="intro-container d-none d-xl-flex">
     <div
       class="logo-container"
       data-scroll
@@ -158,6 +158,55 @@
       </div>
     </div>
   </div>
+  <div class="intro-container d-flex d-xl-none">
+    <div class="logo-container" data-scroll>
+      <div class="logo"><img src="../assets/images/Union.png" alt="" /></div>
+      <div class="logo-text">BACK <span>PACK</span></div>
+    </div>
+    <div class="row">
+      <div
+        class="col-md-6 d-flex justify-content-center align-items-center flex-column header-text-container"
+      >
+        <div class="header-title">
+          <div>M</div>
+          <div>A</div>
+          <div>D</div>
+          <div>&nbsp;L</div>
+          <div>A</div>
+          <div>D</div>
+          <div>S</div>
+          <div>&nbsp;N</div>
+          <div>F</div>
+          <div>T</div>
+        </div>
+        <div class="header-subtitle">
+          Mad Lads NFT has been generating an unprecedented buzz in the world of
+          NFTs, making it the most hyped NFT of the moment
+        </div>
+      </div>
+      <div
+        class="col-md-6 d-flex justify-content-center align-items-center header-image-container"
+      >
+        <div class="design-elements">
+          <div>
+            <DottedCircleShape
+              shapeColor="#f62038"
+              shapeWidth="400px"
+              dotSize="2px"
+              bgSize="16px"
+            />
+          </div>
+        </div>
+        <div class="image-container">
+          <img
+            src="../assets/images/MadLad1.png"
+            alt=""
+            class="dotted-circle"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -236,7 +285,7 @@ export default {
     .circle {
       position: absolute;
       left: 300px;
-      top: 0;
+      top: -30%;
     }
   }
   .image-container {
@@ -245,10 +294,41 @@ export default {
     position: relative;
     width: 100%;
     img {
-      width: 220px;
+      width: 200px;
       clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
       margin: 20px 50px;
     }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .logo-container {
+    margin: 15px 30px !important;
+    .logo-text {
+      font-size: 15px !important;
+    }
+    .logo {
+      img {
+        width: 20px !important  ;
+      }
+    }
+  }
+  .intro-container {
+    height: unset !important;
+  }
+  .header-text-container {
+    margin-top: 100px;
+  }
+  .header-title {
+    div {
+      font-size: 75px !important;
+    }
+  }
+  .header-subtitle {
+    width: 100vw !important;
+    padding: 0px 40px 0px 70px;
+    margin-bottom: 40px;
+    z-index: 1000 !important;
   }
 }
 </style>
