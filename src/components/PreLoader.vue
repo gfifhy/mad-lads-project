@@ -40,6 +40,9 @@ export default {
       for (let i = 0; i < shapes.length; i++) {
         const height = shapes[i].offsetHeight;
         const rect = shapes[i].getBoundingClientRect();
+        console.log(height);
+        console.log(rect);
+        console.log("Offset ewan: " + shapes[i].pageYOffset);
         //this.shapesTop[i] = Math.ceil((rect.top + height) * -1) + "px";
         shapes[i].style.top = Math.ceil((rect.top + height) * -1) + "px";
       }
@@ -89,32 +92,15 @@ $white: #f2f2f2;
   margin: 0;
   padding: 0;
 }
-.bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: #0d0d0d;
-}
-.center {
-  position: fixed;
-  img {
-    width: 200px;
-  }
-}
 .parent {
   background: $black;
-  height: 100svh;
-  width: 100svw;
-  top: 0;
-  left: 0;
-  position: fixed;
+  position: relative;
   .child {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
   }
 }
 .shape-group {

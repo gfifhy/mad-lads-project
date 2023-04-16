@@ -122,5 +122,6 @@ export default {
 .pre-loader-component {
   overflow: hidden;
   height: 100vh;
+  position: relative;
 }
 </style>
