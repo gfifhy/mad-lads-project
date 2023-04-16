@@ -64,3 +64,7 @@ a {
 
 @media only screen and (max-width: 1400px) {
 }
+
+.row {
+  --bs-gutter-x: 0 !important;
+}

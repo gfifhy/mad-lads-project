@@ -10,6 +10,13 @@
       <div data-scroll-section data-scroll class="section2">
         <AboutComponent />
       </div>
+      <div
+        data-scroll-section
+        data-scroll
+        class="section3 pre-loader-component"
+      >
+        <PreLoader message="Give me whitelist plz :<" />
+      </div>
     </div>
   </div>
 </template>
@@ -21,10 +28,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavMenu from "@/components/NavMenu.vue";
 import IntroComponent from "@/components/IntroComponent.vue";
 import AboutComponent from "@/components/AboutComponent.vue";
+import PreLoader from "@/components/PreLoader.vue";
 
 export default {
   name: "HomeView",
-  components: { AboutComponent, IntroComponent, NavMenu },
+  components: { PreLoader, AboutComponent, IntroComponent, NavMenu },
   created() {
     document.title = "Mad Lads | NFT";
   },
@@ -110,5 +118,9 @@ export default {
 }
 .parent {
   background-color: $black;
+}
+.pre-loader-component {
+  overflow: hidden;
+  height: 100vh;
 }
 </style>

@@ -144,7 +144,7 @@ export default {
   font-size: 190px;
   font-family: Gotham-black;
   color: transparent;
-  -webkit-text-stroke: 1.7px rgba(5, 5, 5, 0.8);
+  -webkit-text-stroke: 1.7px rgba(5, 5, 5, 0.3);
   text-align: center;
 }
 .about-container {
@@ -180,6 +180,9 @@ export default {
 }
 
 @media only screen and (max-width: 768px) {
+  .about-title {
+    font-size: 80px !important;
+  }
   .about-container {
     .row {
       .text-container {

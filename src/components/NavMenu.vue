@@ -107,7 +107,7 @@ export default {
 }
 
 .menu {
-  background: $red;
+  background: $light-red;
   display: flex;
   height: 100vh;
   flex-direction: column;
@@ -116,7 +116,7 @@ export default {
 
 .navbar-toggler {
   color: #0d0d0d;
-  z-index: 2;
+  z-index: 1000;
   position: fixed;
   cursor: pointer;
   top: 0;
@@ -131,6 +131,7 @@ export default {
 .nav-container {
   top: 0;
   position: fixed;
+  z-index: 100;
   left: -100%;
   width: 100%;
   height: 100vh;
