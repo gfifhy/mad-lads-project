@@ -284,8 +284,6 @@ export default {
     }
     .circle {
       position: absolute;
-      left: 300px;
-      top: -30%;
     }
   }
   .image-container {
@@ -329,6 +327,9 @@ export default {
     padding: 0px 40px 0px 70px;
     margin-bottom: 40px;
     z-index: 1000 !important;
+  }
+  .circle {
+    visibility: hidden;
   }
 }
 </style>

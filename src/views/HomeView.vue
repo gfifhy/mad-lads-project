@@ -7,7 +7,9 @@
       <div data-scroll-section data-scroll class="section1">
         <IntroComponent />
       </div>
-      <div data-scroll-section data-scroll class="vh-100 section2">Blue</div>
+      <div data-scroll-section data-scroll class="section2">
+        <AboutComponent />
+      </div>
     </div>
   </div>
 </template>
@@ -18,10 +20,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavMenu from "@/components/NavMenu.vue";
 import IntroComponent from "@/components/IntroComponent.vue";
+import AboutComponent from "@/components/AboutComponent.vue";
 
 export default {
   name: "HomeView",
-  components: { IntroComponent, NavMenu },
+  components: { AboutComponent, IntroComponent, NavMenu },
   created() {
     document.title = "Mad Lads | NFT";
   },
@@ -31,8 +34,8 @@ export default {
     const scroll = new LocomotiveScroll({
       el: this.$refs.main,
       smooth: true,
-      multiplier: 0.8,
-      lerp: 0.01,
+      multiplier: 0.6,
+      lerp: 0.02,
       smartphone: { smooth: false, lerp: 1, multiplier: 1 },
     });
 
@@ -107,10 +110,5 @@ export default {
 }
 .parent {
   background-color: $black;
-}
-.section2 {
-  height: 100vh;
-  width: 100vw;
-  background: url("../assets/images/CoralBKG.png");
 }
 </style>
